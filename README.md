@@ -83,8 +83,6 @@ Na primeira execução, um usuário administrador padrão é criado automaticame
 | Usuário | `admin`    |
 | Senha   | `admin123` |
 
-> **Recomendado:** cadastre um novo administrador e altere as credenciais padrão antes de usar em produção.
-
 ---
 
 ## 🧭 Menu do sistema
