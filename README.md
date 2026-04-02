@@ -2,8 +2,6 @@
 
 Sistema de gestão da produção de aeronaves desenvolvido em **TypeScript**. Permite controlar todo o ciclo produtivo de uma aeronave — do cadastro inicial até a entrega ao cliente — via interface de linha de comando (CLI).
 
-> Projeto acadêmico desenvolvido para a disciplina de Engenharia de Software.
-
 ---
 
 ## 📋 Funcionalidades
