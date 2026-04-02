@@ -41,8 +41,7 @@ aerocode/
 │   │   ├── AeronaveService.ts
 │   │   └── FuncionarioService.ts
 │   └── main.ts
-├── data/                  # gerado automaticamente na primeira execução
-│   ├── aeronaves.json
+├── data/                  # gerado automaticamente na primeira execução 
 │   └── funcionarios.json
 ├── package.json
 └── tsconfig.json
