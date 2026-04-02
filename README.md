@@ -72,13 +72,6 @@ npm run build
 # Execute o sistema
 npm start
 ```
-
-### Modo de desenvolvimento (sem compilar)
-
-```bash
-npm run dev
-```
-
 ---
 
 ## 🔐 Acesso inicial
