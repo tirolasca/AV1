@@ -30,10 +30,6 @@ export class Aeronave {
     this.testes.push(teste);
   }
 
-  /**
-   * Verifica se a etapa no índice dado pode ser finalizada.
-   * Regra: a etapa anterior deve estar CONCLUIDA.
-   */
   podeFinalizarEtapa(indice: number): boolean {
     if (indice === 0) return true;
     return this.etapas[indice - 1]?.status === StatusEtapa.CONCLUIDA;

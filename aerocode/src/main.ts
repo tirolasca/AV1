@@ -23,8 +23,6 @@ const aeronaveService = new AeronaveService();
 const funcionarioService = new FuncionarioService();
 let usuarioLogado: Funcionario | null = null;
 
-// ─── Helpers ────────────────────────────────────────────────────────────────
-
 function opcoes<T extends string>(enumeracao: Record<string, T>): string {
   return Object.values(enumeracao).map((v, i) => `  ${i + 1} - ${v}`).join("\n");
 }
@@ -33,8 +31,6 @@ function valorEnum<T extends string>(enumeracao: Record<string, T>, indice: numb
   const vals = Object.values(enumeracao);
   return vals[indice - 1];
 }
-
-// ─── Login ───────────────────────────────────────────────────────────────────
 
 async function login(): Promise<void> {
   console.log("\n===== AEROCODE — LOGIN =====");
@@ -53,8 +49,6 @@ async function login(): Promise<void> {
   console.log(`\nBem-vindo, ${func.nome} (${func.nivelPermissao})!`);
   return menu();
 }
-
-// ─── Menu principal ──────────────────────────────────────────────────────────
 
 async function menu(): Promise<void> {
   const nivel = usuarioLogado!.nivelPermissao;
@@ -99,8 +93,6 @@ async function menu(): Promise<void> {
   }
 }
 
-// ─── Aeronaves ───────────────────────────────────────────────────────────────
-
 async function cadastrarAeronave(): Promise<void> {
   console.log("\n--- Cadastrar Aeronave ---");
   const codigo    = await ask("Código:     ");
@@ -130,8 +122,6 @@ async function listarAeronaves(): Promise<void> {
   }
   return menu();
 }
-
-// ─── Peças ───────────────────────────────────────────────────────────────────
 
 async function adicionarPeca(): Promise<void> {
   console.log("\n--- Adicionar Peça ---");
@@ -177,8 +167,6 @@ async function atualizarStatusPeca(): Promise<void> {
   console.log(`Status de "${peca.nome}" atualizado para "${novoStatus}".`);
   return menu();
 }
-
-// ─── Etapas ──────────────────────────────────────────────────────────────────
 
 async function menuEtapas(): Promise<void> {
   console.log("\n--- Gerenciar Etapas ---");
@@ -277,8 +265,6 @@ async function associarFuncionarioEtapa(): Promise<void> {
   return menuEtapas();
 }
 
-// ─── Testes ──────────────────────────────────────────────────────────────────
-
 async function registrarTeste(): Promise<void> {
   console.log("\n--- Registrar Teste ---");
   const codigo = await ask("Código da aeronave: ");
@@ -300,8 +286,6 @@ async function registrarTeste(): Promise<void> {
   console.log(`Teste ${tipo} registrado: ${resultado}.`);
   return menu();
 }
-
-// ─── Relatório ───────────────────────────────────────────────────────────────
 
 async function gerarRelatorio(): Promise<void> {
   console.log("\n--- Gerar Relatório ---");
@@ -325,8 +309,6 @@ async function gerarRelatorio(): Promise<void> {
 
   return menu();
 }
-
-// ─── Funcionários ─────────────────────────────────────────────────────────────
 
 async function menuFuncionarios(): Promise<void> {
   console.log("\n--- Gerenciar Funcionários ---");
@@ -378,8 +360,6 @@ Permissão:  ${f.nivelPermissao}
   return menuFuncionarios();
 }
 
-// ─── Utilidades ──────────────────────────────────────────────────────────────
-
 async function selecionarAeronaveComEtapas(): Promise<Aeronave | null> {
   const codigo = await ask("Código da aeronave: ");
   const aeronave = aeronaveService.buscar(codigo);
@@ -400,8 +380,6 @@ async function selecionarEtapa(aeronave: Aeronave): Promise<number> {
   return idx;
 }
 
-// ─── Easter Egg ───────────────────────────────────────────────────────────────
-
 async function easterEgg(): Promise<void> {
   console.log(`
 ✈️  ===================================
@@ -414,13 +392,8 @@ Mensagem do sistema:
 "Grandes aeronaves começam com
 grandes linhas de código."
 
-Desenvolvido por Lucas Santos 🚀
-
-   ===================================
 `);
   return menu();
 }
-
-// ─── Inicialização ────────────────────────────────────────────────────────────
 
 login();

@@ -21,9 +21,6 @@ export class AeronaveService {
     this.carregar();
   }
 
-  /**
-   * Cadastra uma aeronave. Retorna false se o código já existir.
-   */
   cadastrar(aeronave: Aeronave): boolean {
     if (this.buscar(aeronave.codigo)) {
       return false;

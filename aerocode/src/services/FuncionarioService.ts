@@ -13,7 +13,6 @@ export class FuncionarioService {
   constructor() {
     this.carregar();
 
-    // Cria o administrador padrão se não houver nenhum funcionário
     if (this.funcionarios.length === 0) {
       const admin = new Funcionario(
         this.proximoId++,
@@ -29,9 +28,6 @@ export class FuncionarioService {
     }
   }
 
-  /**
-   * Cadastra um funcionário. Retorna false se o usuário já existir.
-   */
   cadastrar(funcionario: Funcionario): boolean {
     if (this.funcionarios.some(f => f.usuario === funcionario.usuario)) {
       return false;
